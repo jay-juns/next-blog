@@ -1,0 +1,122 @@
+html, body {
+  width: 100%;
+  height: 100%;
+}
+body {
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+#root {
+  width: 100%;
+  height: 100%;
+}
+.wrapper {
+  width: 100%;
+  height: 100%;
+}
+ul, li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+/* input 기본 스타일 초기화 */
+input {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+/* IE10 이상에서 input box 에 추가된 지우기 버튼 제거 */
+input::-ms-clear { display: none; }
+
+/* input type number 에서 화살표 제거 */
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+/* Select box 스타일 초기화 */ 
+select {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+/* IE 에서 Select box 화살표 제거 */ 
+select::-ms-expand { display: none; }
+button {
+  background-color: transparent;
+  cursor: pointer;
+  box-shadow: none;
+  border: none;
+  padding: 0;
+}
+button:disabled {
+  cursor: not-allowed;
+}
+p {
+  margin:0;
+  padding:0;
+}
+a {
+  text-decoration: none;
+  outline: none;
+  color: transparent;
+}
+a:hover, a:active {
+  text-decoration: none;
+}
+.overlay {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  z-index: 102;
+}
+.overlay.none {
+  background-color: transparent
+}
+.modal-container {
+  visibility: hidden;
+  width: 100%;
+  max-width: 600px;
+  max-height: 90%;
+  min-height: 400px;
+  z-index: 103;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  border-radius: 20px;
+  padding: 10px;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  animation: zoomOut 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+  transition: all 0.3s ease-out;
+}
+.modal-container.active {
+  visibility: visible;
+  opacity: 1;
+}
+.modal-container.in {
+  animation: zoomIn 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+.modal-container.none-bg {
+  background-color: transparent;
+}
+.modal-container > img {
+  width: 100%;
+}
+.modal-close__btn-wrapper {
+  position: absolute;
+  right: 10px;
+  font-size: 30px;
+  color: rgba(0, 0, 0, 0.5);
+  transition: all ease-in .3s;
+}
+.modal-close__btn-wrapper:hover {
+  color: rgba(0, 0, 0, 1);
+}
