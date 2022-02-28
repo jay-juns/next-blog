@@ -24,7 +24,7 @@ function MyApp({ Component, pageProps }: AppLayoutProps) {
   return (
     <ThemeProvider theme={themeMode}>
       <GlobalStyles />
-        <ToggleThemeBtn theme={theme} toggleTheme={toggleTheme} />
+      <ToggleThemeBtn theme={theme} toggleTheme={toggleTheme} />
       <Layout>
         <Component {...pageProps} />
       </Layout>
