@@ -13,13 +13,10 @@ const DefaultLayout = ({ children }: LayoutProps) => {
         <meta charSet="utf-8" />
         <title>Next Blog</title>
       </Head>
-      <div className='app_wrapper'>
+      <div className='app__wrapper'>
         <Header />
-        <div>
-          디펄트 레이아웃
-        </div>
-       {children}
-       <Footer />
+        {children}
+        <Footer />
       </div>
     </>
   )

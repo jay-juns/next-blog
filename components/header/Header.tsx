@@ -6,15 +6,15 @@ const Header = () => {
   const theme = localStorage.getItem('theme');
   
   return (
-    <header>
-      <nav>
+    <header className="header">
+      <nav className="header-nav">
         <div className="left-nav">
           <Link href="/">
             <a className="home-logo-image">
               {theme === 'dark' ?
-               'light logo'
+               <img src="/images/logo/logo_ebsi_d.png" alt="logo" />
                 :
-                <img src="/images/logo/logo1-dark.png" alt="logo" /> 
+                <img src="/images/logo/logo_ebsi_w.png" alt="logo" /> 
               }
             </a>
           </Link>

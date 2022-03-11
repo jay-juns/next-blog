@@ -8,8 +8,8 @@ import { useDarkMode } from '../utils/customHooks/useDarkMode'
 import ToggleThemeBtn from '../components/toggleThemeBtn/ToggleThemeBtn'
 
 type AppLayoutProps = {
-  Component: PageWithLayoutType
-  pageProps: any
+  Component: PageWithLayoutType;
+  pageProps: any;
 }
 
 function MyApp({ Component, pageProps }: AppLayoutProps) {

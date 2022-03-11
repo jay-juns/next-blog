@@ -1,9 +1,12 @@
+import { Icon } from '@iconify/react';
+
 const ToggleThemeBtn= ({ theme, toggleTheme }: {theme:any, toggleTheme:any}) => {
   const isLight = theme === 'light';
 
   return (
-    <button className={isLight === true ? 'toggle-btn active' : 'toggle-btn'} onClick={toggleTheme}>
-       토글 버튼
+    <button className="toggle-btn" onClick={toggleTheme}>
+       <Icon className={isLight === true ? '' : 'sun'} icon="ri:moon-line" />
+       <Icon className={isLight === true ? 'moon' : ''} icon="ri:sun-line" />
     </button>
   )
 };
