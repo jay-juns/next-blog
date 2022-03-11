@@ -33,4 +33,3 @@ function MyApp({ Component, pageProps }: AppLayoutProps) {
 }
 
 export default MyApp
-
