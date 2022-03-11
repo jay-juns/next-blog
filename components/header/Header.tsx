@@ -3,11 +3,21 @@ import { useRouter } from "next/router";
 
 const Header = () => {
   const router = useRouter();
-
+  const theme = localStorage.getItem('theme');
+  
   return (
     <header>
       <nav>
         <div className="left-nav">
+          <Link href="/">
+            <a className="home-logo-image">
+              {theme === 'dark' ?
+               'light logo'
+                :
+                <img src="/images/logo/logo1-dark.png" alt="logo" /> 
+              }
+            </a>
+          </Link>
           <ul>
             <li className={router.asPath === "/" ? "active" : ""}>
               <Link href="/">

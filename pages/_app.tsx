@@ -13,9 +13,11 @@ type AppLayoutProps = {
 }
 
 function MyApp({ Component, pageProps }: AppLayoutProps) {
-  const Layout = Component.layout || ((children) => <>{children}</>);
   const [theme, toggleTheme, componentMounted] = useDarkMode();
   const themeMode = theme === 'light' ? lightTheme : darkTheme;
+  const Layout = Component.layout || ((children) => <>
+    {children}
+  </>);
 
   if (!componentMounted) {
     return <div />
@@ -24,8 +26,8 @@ function MyApp({ Component, pageProps }: AppLayoutProps) {
   return (
     <ThemeProvider theme={themeMode}>
       <GlobalStyles />
-      <ToggleThemeBtn theme={theme} toggleTheme={toggleTheme} />
       <Layout>
+        <ToggleThemeBtn theme={theme} toggleTheme={toggleTheme} />
         <Component {...pageProps} />
       </Layout>
     </ThemeProvider>
