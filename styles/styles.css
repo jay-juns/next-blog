@@ -187,7 +187,19 @@ a:hover, a:active {
 .right-nav > span {
   margin-right: 20px;
 }
-
 .right-nav > span:last-child {
   margin-right: 0;
+}
+.footer {
+  width: 100%;
+}
+.footer__wrapper {
+  max-width: 1296px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 37px 15px 48px;
+}
+
+.main-container {
+  padding:0 15px 72px;
 }

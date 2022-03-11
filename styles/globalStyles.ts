@@ -21,4 +21,8 @@ export const GlobalStyles = createGlobalStyle`
     color: ${({ theme } : {theme: any}) => theme.textActive};
     font-weight: 700;
   }
+  .footer {
+    background-color: ${({ theme } : {theme: any}) => theme.footerBg};
+    border-top: 1px solid ${({ theme } : {theme: any}) => theme.borderColor};
+  }
 `;
