@@ -1,9 +1,12 @@
 import Link from "next/link"
 import { useRouter } from "next/router";
+import { signIn, signOut, useSession } from 'next-auth/react'
 
 const Header = () => {
   const router = useRouter();
   const theme = localStorage.getItem('theme');
+  const { data, status } = useSession()
+  console.log(data, status)
   
   return (
     <header className="header">
@@ -37,16 +40,36 @@ const Header = () => {
           </ul>
         </div>
         <div className="right-nav">
-          <span className={router.asPath === "/login" ? "active" : ""}>
-            <Link href="/login">
-              Log In
-            </Link>
-          </span>
-          <span className={router.asPath === "/signup" ? "active" : ""}>
-            <Link href="/signup">
-              Sign Up
-            </Link>
-          </span>
+          {status === 'authenticated' ?
+          
+             <button onClick={() => {
+              signOut({
+                callbackUrl: 'http://localhost:3000/'
+              })
+            }}>
+              logOut
+            </button> 
+            :
+            <>
+              <span className={router.asPath === "/login" ? "active" : ""}>
+                <Link href="/login">
+                  Log In
+                </Link>
+                <button onClick={() =>{
+                  signIn('github',{
+                    callbackUrl: 'http://localhost:3000/login'
+                  })
+                }}>
+                  SignIn 
+                </button>
+              </span>
+              <span className={router.asPath === "/signup" ? "active" : ""}>
+                <Link href="/signup">
+                  Sign Up
+                </Link>
+              </span>
+            </>
+          }
         </div>
       </nav>
     </header>
