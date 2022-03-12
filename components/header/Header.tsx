@@ -1,18 +1,12 @@
 import Link from "next/link"
 import { useRouter } from "next/router";
-import { signIn, signOut, useSession } from 'next-auth/react'
+import { signOut, useSession } from 'next-auth/react'
 
 const Header = () => {
   const router = useRouter();
   const theme = localStorage.getItem('theme');
   const { data, status } = useSession()
   console.log(data, status)
-
-  const handleSignIn = async () => {
-    await signIn('github', {
-      callbackUrl: 'http://localhost:3000/dashboard'
-    })
-  }
 
   const handleLogout = async () => {
     await signOut({
@@ -63,9 +57,6 @@ const Header = () => {
                 <Link href="/login">
                   Log In
                 </Link>
-                <button onClick={handleSignIn}>
-                  SignIn 
-                </button>
               </span>
               <span className={router.asPath === "/signup" ? "active" : ""}>
                 <Link href="/signup">

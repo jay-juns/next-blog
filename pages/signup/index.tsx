@@ -4,6 +4,7 @@ import PageWithLayoutType from '../../types/pageWithLayoutType';
 import DefaultLayout from '../../components/layouts/Default';
 
 const Signup: FC = () => {
+
   return (
     <div className="main-container">
       <Head>
