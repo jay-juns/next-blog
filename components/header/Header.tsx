@@ -2,7 +2,7 @@ import Link from "next/link"
 import { useRouter } from "next/router";
 import { signOut, useSession } from 'next-auth/react'
 
-const Header = () => {
+const Header = ({ children }: any) => {
   const router = useRouter();
   const theme = localStorage.getItem('theme');
   const { data, status } = useSession()
@@ -65,6 +65,7 @@ const Header = () => {
               </span>
             </>
           }
+          {children && children}
         </div>
       </nav>
     </header>

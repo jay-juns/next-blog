@@ -1,6 +1,5 @@
 
 import React from 'react';
-import Header from "../header/Header";
 import Footer from "../footer/Footer";
 import Head from "next/head";
 
@@ -16,7 +15,6 @@ const MainLayout = ({ children }: LayoutProps) => {
         <title>Next Blog</title>
       </Head>
       <div className='app__wrapper'>
-        <Header />
         {children}
         <Footer />
       </div>

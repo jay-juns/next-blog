@@ -124,15 +124,15 @@ a:hover, a:active {
   color: rgba(0, 0, 0, 1);
 }
 .toggle-btn {
-  position: fixed;
-  right:56px;
-  top:23px;
-  z-index: 3001;
+  position: relative;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .toggle-btn > svg {
   position:absolute;
-  left:0;
-  top: 0;
   font-size: 24px;
   transform: translateY(0);
   transition: all ease-in-out .3s;
@@ -174,7 +174,6 @@ a:hover, a:active {
 .left-nav > ul {
   display: flex;
 }
-
 .left-nav > ul > li {
   margin-right: 20px;
 }
@@ -183,6 +182,8 @@ a:hover, a:active {
 }
 .right-nav {
   margin-right: 80px;
+  display: flex;
+  align-items: center;
 }
 .right-nav > span {
   margin-right: 20px;
