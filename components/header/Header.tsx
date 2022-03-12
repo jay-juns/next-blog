@@ -7,6 +7,18 @@ const Header = () => {
   const theme = localStorage.getItem('theme');
   const { data, status } = useSession()
   console.log(data, status)
+
+  const handleSignIn = async () => {
+    await signIn('github', {
+      callbackUrl: 'http://localhost:3000/dashboard'
+    })
+  }
+
+  const handleLogout = async () => {
+    await signOut({
+      callbackUrl: 'http://localhost:3000'
+    })
+  }
   
   return (
     <header className="header">
@@ -42,11 +54,7 @@ const Header = () => {
         <div className="right-nav">
           {status === 'authenticated' ?
           
-             <button onClick={() => {
-              signOut({
-                callbackUrl: 'http://localhost:3000/'
-              })
-            }}>
+             <button onClick={handleLogout}>
               logOut
             </button> 
             :
@@ -55,11 +63,7 @@ const Header = () => {
                 <Link href="/login">
                   Log In
                 </Link>
-                <button onClick={() =>{
-                  signIn('github',{
-                    callbackUrl: 'http://localhost:3000/login'
-                  })
-                }}>
+                <button onClick={handleSignIn}>
                   SignIn 
                 </button>
               </span>
