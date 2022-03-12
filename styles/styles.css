@@ -166,7 +166,7 @@ a:hover, a:active {
 }
 .home-logo-image {
   width: 80px;
-  margin: 0 20px 0 15px;
+  margin: 0 20px 0 0;
 }
 .home-logo-image > img {
   width: 100%;
